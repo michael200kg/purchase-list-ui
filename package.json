@@ -1,0 +1,20 @@
+{
+  "name": "purchase-list-ui",
+  "version": "1.0.0",
+  "description": "Purchaces UI module",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "ng serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michael200kg/purchase-list-ui.git"
+  },
+  "author": "Vershkov M.V.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michael200kg/purchase-list-ui/issues"
+  },
+  "homepage": "https://github.com/michael200kg/purchase-list-ui#readme"
+}
