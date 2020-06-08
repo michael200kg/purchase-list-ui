@@ -119,7 +119,7 @@ export class PurchaseService implements PurchaseServiceInterface {
             responseType = 'text';
         }
 
-        return this.httpClient.get<Array<Purchase>>(`${this.configuration.basePath}/purchasesList`,
+        return this.httpClient.get<Array<Purchase>>(`${this.configuration.basePath}/purchases`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,

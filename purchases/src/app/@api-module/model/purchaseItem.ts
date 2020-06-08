@@ -13,6 +13,7 @@
 
 export interface PurchaseItem { 
     id?: number;
+    purchaseId?: number;
     checked?: boolean;
     checkedDate?: Date;
     itemName?: string;
