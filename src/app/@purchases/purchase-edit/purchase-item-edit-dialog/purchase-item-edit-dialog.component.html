@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="card-header">Товар</div>
+    <div class="card-body">
+        <form *ngIf="purchaseItemForm" [formGroup]="purchaseItemForm">
+            <div fxLayout="column" fxLayoutGap="10px">
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <label fxFlex="20" for="name">Наименование</label>
+                    <input class="form-control form-control-sm"
+                           fieldSize="medium"
+                           formControlName="name"
+                           fullWidth
+                           id="name"
+                           type="text">
+                </div>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <label fxFlex="20" for="description">Описание</label>
+                    <textarea
+                            class="form-control form-control-sm"
+                            fieldSize="medium"
+                            formControlName="description"
+                            fullWidth=""
+                            rows="5"
+                            id="description"
+                            type="text">
+                    </textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer">
+        <div fxLayout="row" fxLayoutGap="10px">
+            <button (click)="save()" class="btn btn-success btn-sm">
+                Сохранить
+            </button>
+            <button (click)="cancel()" class="btn btn-success btn-sm">
+                Выход
+            </button>
+        </div>
+    </div>
+</div>

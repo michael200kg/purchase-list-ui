@@ -1,0 +1,55 @@
+<div class="card">
+    <div class="card-header">{{title}}</div>
+    <div class="card-body">
+        <form *ngIf="purchaseForm" [formGroup]="purchaseForm">
+            <div fxLayout="column" fxLayoutGap="10px">
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <label fxFlex="20" for="name">Наименование</label>
+                    <input class="form-control form-control-sm"
+                           fieldSize="medium"
+                           formControlName="name"
+                           fullWidth
+                           id="name"
+                           type="text">
+                </div>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <label fxFlex="20" for="text">Описание списка</label>
+                    <textarea
+                            class="form-control form-control-sm"
+                            fieldSize="medium"
+                            formControlName="text"
+                            fullWidth=""
+                            rows="5"
+                            id="text"
+                            type="text">
+                    </textarea>
+                </div>
+                <div><h4>Товары:</h4></div>
+                <button mat-raised-button color="primary"
+                   (click)="addGoods()">
+                    Добавить
+                </button>
+                <div style="border: 1px solid lightgray">
+                    <mat-selection-list>
+                        <mat-list-option *ngFor="let item of purchase.items">
+                            <mat-icon matListIcon>spa</mat-icon>
+                            <h3 mat-line>{{item.itemName}}</h3>
+                            <p mat-line>{{item.itemName}}</p>
+                        </mat-list-option>
+                    </mat-selection-list>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="card-footer">
+        <div fxLayout="row" fxLayoutGap="10px">
+            <button (click)="save()" class="btn btn-success btn-sm">
+                {{buttonLabel}}
+            </button>
+            <button (click)="cancel()" class="btn btn-success btn-sm">
+                Выход
+            </button>
+        </div>
+    </div>
+</div>

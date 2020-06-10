@@ -1,0 +1,30 @@
+<mat-card>
+
+    <mat-card-header>
+        <mat-card-title>Список покупок</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <div fxLayout="column" fxLayoutGap="10px">
+
+            <div fxFlex="10">
+                <button mat-raised-button (click)="createPurchase()" color="primary">
+                    Новый список&nbsp; <i class="fa fa-plus icon-button"></i>
+                </button>
+            </div>
+
+            <div (click)="editPurchase(p.id)" style="border-bottom: 1px solid lightgray" *ngFor="let p of purchases" fxLayout="row">
+                <div fxFlex="20">{{p.createdDate | date: 'dd.MM.yyyy HH:mm'}}</div>
+                <div fxLayout="column" fxFlex="60">
+                    <div><b>{{p.name}}</b></div>
+                    <div>{{p.text}}</div>
+                </div>
+                <div fxFlex="20">
+                    <button mat-raised-button (click)="deletePurchase(p.id)">Удалить</button>
+                </div>
+            </div>
+
+        </div>
+    </mat-card-content>
+</mat-card>
