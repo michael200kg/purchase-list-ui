@@ -18,7 +18,6 @@ export class PurchaseEditComponent implements OnInit {
     public title: string;
     public buttonLabel: string
     public mode: string
-    public id;
 
     purchaseForm: FormGroup;
 
@@ -35,7 +34,7 @@ export class PurchaseEditComponent implements OnInit {
             if (id > 0) {
                 this.purchaseService.getPurchaseById(id).subscribe(p => {
                         this.purchase = p;
-                        this.mode = 'CREATE';
+                        this.mode = 'UPDATE';
                         this.fillFormGroup(this.purchase);
                     }
                 )
@@ -43,7 +42,7 @@ export class PurchaseEditComponent implements OnInit {
                 this.purchase = new PurchaseModel(null, new Date(), false, null,
                     null, null, 'MICHAEL', false,
                     null, []);
-                this.mode = 'UPDATE';
+                this.mode = 'CREATE';
                 this.fillFormGroup(this.purchase);
             }
 
@@ -59,8 +58,8 @@ export class PurchaseEditComponent implements OnInit {
             itemDescription: null, purchaseId: this.purchase.id
         };
         const config: MatDialogConfig = {
-          height: '50vw',
-            width: '80vw',
+          height: '100%',
+            width: '100%',
             data: { item: newItem }
         };
         const editDialogRef = this.dialog.open(PurchaseItemEditDialogComponent, config);
