@@ -1,30 +1,41 @@
 <mat-card>
 
-    <mat-card-header>
-        <mat-card-title>Список покупок</mat-card-title>
+    <mat-card-header class="header">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <div>СПИСОК ПОКУПОК</div>
+            <button mat-icon-button (click)="createPurchase()">
+                <mat-icon style="color:#fff;">add_circle</mat-icon>
+            </button>
+        </div>
     </mat-card-header>
 
     <mat-card-content>
 
-        <div fxLayout="column" fxLayoutGap="10px">
+        <div style="margin-top:20px" fxLayout="column" fxLayoutGap="10px">
 
-            <div fxFlex="10">
-                <button mat-raised-button (click)="createPurchase()" color="primary">
-                    Новый список&nbsp; <i class="fa fa-plus icon-button"></i>
-                </button>
-            </div>
-
-            <div (click)="editPurchase(p.id)" style="border-bottom: 1px solid lightgray" *ngFor="let p of purchases" fxLayout="row">
-                <div fxFlex="20">{{p.createdDate | date: 'dd.MM.yyyy HH:mm'}}</div>
-                <div fxLayout="column" fxFlex="60">
-                    <div><b>{{p.name}}</b></div>
-                    <div>{{p.text}}</div>
+            <div style="border-bottom: 1px solid lightgray" *ngFor="let p of purchases"
+                 fxLayout="row">
+                <div fxFlex="20">{{p.createdDate | date: 'dd.MM.yyyy'}}</div>
+                <div (click)="checkPurchase(p.id)" fxFlex="60">
+                    <b>{{p.name}}</b>
                 </div>
-                <div fxFlex="20">
-                    <button mat-raised-button (click)="deletePurchase(p.id)">Удалить</button>
+                <div fxFlex="10">
+                    <button mat-icon-button
+                            [matMenuTriggerFor]="appMenu"
+                            [matMenuTriggerData]="{id: p.id}">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
                 </div>
             </div>
 
         </div>
     </mat-card-content>
 </mat-card>
+
+<mat-menu #appMenu="matMenu">
+    <ng-template matMenuContent let-id="id">
+        <button mat-menu-item (click)="editPurchase(id)">Изменить</button>
+        <button mat-menu-item (click)="deletePurchase(id)">Удалить</button>
+    </ng-template>
+</mat-menu>
+

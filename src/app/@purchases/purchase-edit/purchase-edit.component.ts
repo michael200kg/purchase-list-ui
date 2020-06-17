@@ -52,35 +52,53 @@ export class PurchaseEditComponent implements OnInit {
 
     }
 
-    addGoods() {
+    addItem() {
         const newItem: PurchaseItem = {
             id: null, itemName: null, checked: false,
             itemDescription: null, purchaseId: this.purchase.id
         };
         const config: MatDialogConfig = {
-          height: '100%',
+            height: '60%',
             width: '100%',
-            data: { item: newItem }
+            data: {item: newItem}
         };
         const editDialogRef = this.dialog.open(PurchaseItemEditDialogComponent, config);
         editDialogRef.afterClosed().subscribe(result => {
-            if(result) {
+            if (result) {
                 this.purchase.items.push(editDialogRef.componentInstance.purchaseItem);
             }
         })
 
     }
 
+    editItem(id_: number) {
+        const item = this.getItemById(id_);
+        if (item !== null) {
+            const config: MatDialogConfig = {
+                height: '60%',
+                width: '100%',
+                data: {item: item}
+            };
+            const editDialogRef = this.dialog.open(PurchaseItemEditDialogComponent, config);
+            editDialogRef.afterClosed().subscribe(result => {
+                if (result) {
+                    this.purchase.items = this.purchase.items.map(x =>
+                        x.id === id_ ? editDialogRef.componentInstance.purchaseItem : x)
+                }
+            });
+        }
+
+
+    }
+
     fillFormGroup(p_: Purchase) {
         this.purchaseForm = this.fb.group({
-            name: [p_.name, [Validators.required]],
-            text: [p_.text, [Validators.required]]
+            name: [p_.name, [Validators.required]]
         });
     }
 
     updateEntity() {
         this.purchase.name = this.purchaseForm.get('name').value;
-        this.purchase.text = this.purchaseForm.get('text').value;
     }
 
     resolveService(purchase_: Purchase): Observable<any> {
@@ -99,6 +117,11 @@ export class PurchaseEditComponent implements OnInit {
     cancel() {
         this.router.navigate(['list']).then(() => {
         });
+    }
+
+    getItemById(id_: number): PurchaseItem {
+        return this.purchase.items && this.purchase.items.length > 0 ?
+            this.purchase.items.find(x => x.id === id_) : null;
     }
 
 }

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 import { PurchaseService } from './api/purchase.service';
+import { PurchaseItemService } from './api/purchaseItem.service';
 
 @NgModule({
   imports:      [],

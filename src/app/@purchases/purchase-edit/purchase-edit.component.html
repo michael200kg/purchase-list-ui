@@ -5,38 +5,26 @@
             <div fxLayout="column" fxLayoutGap="10px">
                 <div fxLayout="row" fxLayoutGap="10px">
                     <label fxFlex="20" for="name">Наименование</label>
-                    <input class="form-control form-control-sm"
-                           fieldSize="medium"
-                           formControlName="name"
-                           fullWidth
-                           id="name"
-                           type="text">
-                </div>
-                <div fxLayout="row" fxLayoutGap="10px">
-                    <label fxFlex="20" for="text">Описание списка</label>
-                    <textarea
-                            class="form-control form-control-sm"
-                            fieldSize="medium"
-                            formControlName="text"
-                            fullWidth=""
-                            rows="5"
-                            id="text"
-                            type="text">
+                    <textarea class="form-control form-control-sm"
+                              formControlName="name"
+                              id="name"
+                              cols="3"
+                              type="text">
                     </textarea>
                 </div>
                 <div><h4>Товары:</h4></div>
                 <button mat-raised-button color="primary"
-                   (click)="addGoods()">
+                        (click)="addItem()">
                     Добавить
                 </button>
                 <div style="border: 1px solid lightgray">
-                    <mat-selection-list>
-                        <mat-list-option *ngFor="let item of purchase.items">
-                            <mat-icon matListIcon>spa</mat-icon>
-                            <h3 mat-line>{{item.itemName}}</h3>
-                            <p mat-line>{{item.itemDescription}}</p>
-                        </mat-list-option>
-                    </mat-selection-list>
+                    <mat-list>
+                        <mat-list-item checkboxPosition="before"
+                                         (click)="editItem(item.id)"
+                                         *ngFor="let item of purchase.items">
+                            <div mat-line>{{item.itemName}}</div>
+                        </mat-list-item>
+                    </mat-list>
                 </div>
             </div>
 

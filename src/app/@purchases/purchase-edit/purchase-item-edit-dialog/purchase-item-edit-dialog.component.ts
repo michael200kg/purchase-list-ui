@@ -27,14 +27,12 @@ export class PurchaseItemEditDialogComponent implements OnInit {
 
   fillForm() {
       this.purchaseItemForm = this.fb.group({
-        name: [this.purchaseItem.itemName, [Validators.required]],
-        description: [this.purchaseItem.itemDescription]
+        name: [this.purchaseItem.itemName, [Validators.required]]
       });
   }
 
   restoreModel() {
      this.purchaseItem.itemName = this.purchaseItemForm.get('name').value;
-     this.purchaseItem.itemDescription = this.purchaseItemForm.get('description').value;
   }
 
   save() {

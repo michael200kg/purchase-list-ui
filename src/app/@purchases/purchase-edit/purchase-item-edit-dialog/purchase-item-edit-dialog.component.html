@@ -5,24 +5,12 @@
             <div fxLayout="column" fxLayoutGap="10px">
                 <div fxLayout="row" fxLayoutGap="10px">
                     <label fxFlex="20" for="name">Наименование</label>
-                    <input class="form-control form-control-sm"
-                           fieldSize="medium"
+                    <textarea class="form-control form-control-sm"
+                           rows="5"
                            formControlName="name"
-                           fullWidth
                            id="name"
                            type="text">
-                </div>
-                <div fxLayout="row" fxLayoutGap="10px">
-                    <label fxFlex="20" for="description">Описание</label>
-                    <textarea
-                            class="form-control form-control-sm"
-                            fieldSize="medium"
-                            formControlName="description"
-                            fullWidth=""
-                            rows="5"
-                            id="description"
-                            type="text">
-                    </textarea>
+                        </textarea>
                 </div>
             </div>
         </form>

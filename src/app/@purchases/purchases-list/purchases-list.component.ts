@@ -49,10 +49,18 @@ export class PurchasesListComponent implements OnInit {
         });
     }
 
-    deletePurchase(id_: number) {
-        this.purchaseService.deletePurchase(id_).subscribe(() => {
+    checkPurchase(id_: number) {
+        this.router.navigate(['/app/purchase-check', {purchaseId: id_}], { relativeTo: this.route }).then(()=>{
             this.refreshTable();
         });
+    }
+
+    deletePurchase(id_: number) {
+        if(confirm("Действительно хотите удалить этот список покупок?")) {
+            this.purchaseService.deletePurchase(id_).subscribe(() => {
+                this.refreshTable();
+            });
+        }
     }
 
 

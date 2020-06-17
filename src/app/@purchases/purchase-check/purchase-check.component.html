@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header">{{title}}</div>
+    <div class="card-body">
+
+        <div fxLayout="column" fxLayoutGap="10px">
+            <div><h4>Товары:</h4></div>
+
+            <mat-selection-list>
+                <mat-list-option checkboxPosition="before"
+                                 (click)="toggle(item.id)"
+                                 [selected]="item.checked"
+                                 *ngFor="let item of purchase.items">
+                    <mat-icon matListIcon>spa</mat-icon>
+                    <div [class]="item.checked ? 'checked-item' : 'unchecked-item'" mat-line>{{item.itemName}}</div>
+                </mat-list-option>
+            </mat-selection-list>
+
+        </div>
+
+    </div>
+    <div class="card-footer">
+        <div fxLayout="row" fxLayoutGap="10px">
+            <button (click)="cancel()" class="btn btn-success btn-sm">
+                Выход
+            </button>
+        </div>
+    </div>
+</div>

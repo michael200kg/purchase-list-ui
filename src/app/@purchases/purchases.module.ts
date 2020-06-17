@@ -12,11 +12,17 @@ import {AppRoutingModule} from "../app-routing.module";
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 import {PurchaseItemEditDialogComponent} from './purchase-edit/purchase-item-edit-dialog/purchase-item-edit-dialog.component';
+import {PurchaseCheckComponent} from "./purchase-check/purchase-check.component";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
-    declarations: [PurchasesListComponent, PurchaseEditComponent, PurchaseItemEditDialogComponent],
+    declarations: [PurchasesListComponent,
+        PurchaseEditComponent,
+        PurchaseItemEditDialogComponent,
+        PurchaseCheckComponent],
     entryComponents: [PurchaseEditComponent,
-        PurchaseItemEditDialogComponent],
+        PurchaseItemEditDialogComponent,
+        PurchaseCheckComponent],
     imports: [
         CommonModule,
         PurchasesRoutingModule,
@@ -27,7 +33,8 @@ import {PurchaseItemEditDialogComponent} from './purchase-edit/purchase-item-edi
         MatCardModule,
         MatButtonModule,
         MatListModule,
-        MatIconModule
+        MatIconModule,
+        MatMenuModule
     ]
 })
 export class PurchasesModule {
