@@ -3,29 +3,41 @@
     <div class="card-body">
         <form *ngIf="purchaseForm" [formGroup]="purchaseForm">
             <div fxLayout="column" fxLayoutGap="10px">
-                <div fxLayout="row" fxLayoutGap="10px">
-                    <label fxFlex="20" for="name">Наименование</label>
-                    <textarea class="form-control form-control-sm"
-                              formControlName="name"
-                              id="name"
-                              cols="3"
-                              type="text">
-                    </textarea>
+
+                <div fxLayout="column">
+                    <div>Наименование списка</div>
+                    <input class="form-control form-control-sm"
+                           formControlName="name"
+                           id="name"
+                           type="text">
                 </div>
-                <div><h4>Товары:</h4></div>
-                <button mat-raised-button color="primary"
-                        (click)="addItem()">
-                    Добавить
-                </button>
-                <div style="border: 1px solid lightgray">
-                    <mat-list>
-                        <mat-list-item checkboxPosition="before"
-                                         (click)="editItem(item.id)"
-                                         *ngFor="let item of purchase.items">
-                            <div mat-line>{{item.itemName}}</div>
-                        </mat-list-item>
-                    </mat-list>
+
+
+                <div fxFlex="90" fxLayout="column">
+                    <div>Добавить товар:</div>
+                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+
+                        <input class="form-control form-control-sm"
+                               formControlName="itemName"
+                               id="itemName"
+                               type="text">
+
+                        <button mat-mini-fab color="primary"
+                                (click)="addItem()">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
                 </div>
+
+                <mat-list>
+                    <mat-list-item checkboxPosition="before"
+                                   (click)="editItem(item.id)"
+                                   *ngFor="let item of purchase.items">
+                        <div style="border-bottom: 1px solid lightgray" mat-line>{{item.itemName}}</div>
+                        <mat-icon (click)="deleteItem(item.id)" color="warn">clear</mat-icon>
+                    </mat-list-item>
+                </mat-list>
+
             </div>
 
         </form>

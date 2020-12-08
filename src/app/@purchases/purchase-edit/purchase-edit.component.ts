@@ -53,31 +53,29 @@ export class PurchaseEditComponent implements OnInit {
     }
 
     addItem() {
-        const newItem: PurchaseItem = {
-            id: null, itemName: null, checked: false,
-            itemDescription: null, purchaseId: this.purchase.id
-        };
-        const config: MatDialogConfig = {
-            height: '60%',
-            width: '100%',
-            data: {item: newItem}
-        };
-        const editDialogRef = this.dialog.open(PurchaseItemEditDialogComponent, config);
-        editDialogRef.afterClosed().subscribe(result => {
-            if (result) {
-                this.purchase.items.push(editDialogRef.componentInstance.purchaseItem);
-            }
-        })
+        const itemName = this.purchaseForm.get('itemName').value;
+        if(itemName) {
+            const newItem: PurchaseItem = {
+                id: null, itemName: itemName, checked: false,
+                itemDescription: null, purchaseId: this.purchase.id
+            };
+            this.purchase.items.push(newItem);
+            this.purchaseForm.get('itemName').patchValue(null);
+        }
 
+    }
+
+    deleteItem(id_: number) {
+       this.purchase.items = this.purchase.items.filter(x => x.id != id_);
     }
 
     editItem(id_: number) {
         const item = this.getItemById(id_);
         if (item !== null) {
             const config: MatDialogConfig = {
-                height: '60%',
-                width: '100%',
-                data: {item: item}
+                data: {item: item},
+                maxWidth: '100%',
+                width: '100%'
             };
             const editDialogRef = this.dialog.open(PurchaseItemEditDialogComponent, config);
             editDialogRef.afterClosed().subscribe(result => {
@@ -93,7 +91,8 @@ export class PurchaseEditComponent implements OnInit {
 
     fillFormGroup(p_: Purchase) {
         this.purchaseForm = this.fb.group({
-            name: [p_.name, [Validators.required]]
+            name: [p_.name, [Validators.required]],
+            itemName: [null]
         });
     }
 

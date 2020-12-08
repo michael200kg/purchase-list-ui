@@ -5,7 +5,7 @@
         <div fxLayout="column" fxLayoutGap="10px">
             <div><h4>Товары:</h4></div>
 
-            <mat-selection-list>
+            <mat-selection-list *ngIf="purchase">
                 <mat-list-option checkboxPosition="before"
                                  (click)="toggle(item.id)"
                                  [selected]="item.checked"
