@@ -38,6 +38,8 @@
     "core-js": "3.6.4",
     "jquery": "3.4.1",
     "moment": "^2.24.0",
+    "ngrx-store-localstorage": "^10.1.1",
+    "ngx-logger": "^4.1.9",
     "roboto-fontface": "0.8.0",
     "rxjs": "6.4.0",
     "tslib": "^1.9.0",

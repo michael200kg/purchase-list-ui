@@ -5,8 +5,15 @@
             <div fxLayout="column" fxLayoutGap="10px">
 
                 <div fxLayout="column">
-                    <div>Наименование списка</div>
-                    <input class="form-control form-control-sm"
+                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                        <div fxFlex="30">Список для</div>
+                        <mat-select formControlName="sharedForUsername" name="sharedUserName">
+                            <mat-option *ngFor="let user of users" [value]="user.username">
+                                {{user.fio}}
+                            </mat-option>
+                        </mat-select>
+                    </div>
+                    <input class="mt-2 form-control form-control-sm"
                            formControlName="name"
                            id="name"
                            type="text">

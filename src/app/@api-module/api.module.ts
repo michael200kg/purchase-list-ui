@@ -3,8 +3,10 @@ import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
 
+import { AuthService } from './api/auth.service';
 import { PurchaseService } from './api/purchase.service';
 import { PurchaseItemService } from './api/purchaseItem.service';
+import { UserService } from './api/user.service';
 
 @NgModule({
   imports:      [],

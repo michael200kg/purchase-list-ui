@@ -1,27 +1,32 @@
-import {NgModule} from '@angular/core';
-import {ExtraOptions, PreloadAllModules, RouterModule, Routes} from '@angular/router';
-import {PurchasesListComponent} from "./@purchases/purchases-list/purchases-list.component";
+import { NgModule } from '@angular/core';
+import { ExtraOptions, PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-    {
-        path: 'app',
-        loadChildren: () => import('./@purchases/purchases.module').then(m => m.PurchasesModule)
-    },
-    {
-        path: '**',
-        redirectTo: 'app/purchase-list'
-    }
+  {
+    canActivate: [AuthGuard],
+    path: 'app',
+    loadChildren: () => import('./front/front.module').then(m => m.FrontModule)
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'auth/login'
+  }
 ];
 
 const config: ExtraOptions = {
-    enableTracing: false,
-    useHash: true,
-    preloadingStrategy: PreloadAllModules
+  enableTracing: false,
+  useHash: true,
+  preloadingStrategy: PreloadAllModules
 };
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, config)],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, config)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {
 }

@@ -70,7 +70,7 @@ export class PurchaseCheckComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['list']).then(() => {
+    this.router.navigate(['/app/purchases/purchase-list']).then(() => {
     });
   }
 

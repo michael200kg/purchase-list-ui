@@ -1,130 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35a28b5e-020a-4b41-be90-76a1b56cbdef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/montserrat-v14-latin_cyrillic-700.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/montserrat-v14-latin_cyrillic-700.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/montserrat-v14-latin_cyrillic-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/montserrat-v14-latin_cyrillic-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/neucha-v11-latin_cyrillic-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/neucha-v11-latin_cyrillic-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/open-sans-v17-latin_cyrillic-300.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/open-sans-v17-latin_cyrillic-300.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/open-sans-v17-latin_cyrillic-300italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/open-sans-v17-latin_cyrillic-300italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/open-sans-v17-latin_cyrillic-700.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/open-sans-v17-latin_cyrillic-700.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/open-sans-v17-latin_cyrillic-700italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/open-sans-v17-latin_cyrillic-700italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/open-sans-v17-latin_cyrillic-italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/open-sans-v17-latin_cyrillic-italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/open-sans-v17-latin_cyrillic-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/open-sans-v17-latin_cyrillic-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/pangolin-v5-latin_cyrillic-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/pangolin-v5-latin_cyrillic-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/roboto-v20-latin_cyrillic-300.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/roboto-v20-latin_cyrillic-300.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/roboto-v20-latin_cyrillic-500.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/roboto-v20-latin_cyrillic-500.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/roboto-v20-latin_cyrillic-700.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/roboto-v20-latin_cyrillic-700.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/roboto-v20-latin_cyrillic-italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/roboto-v20-latin_cyrillic-italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/roboto-v20-latin_cyrillic-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/roboto-v20-latin_cyrillic-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/source-sans-pro-v13-latin_cyrillic-300.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/source-sans-pro-v13-latin_cyrillic-300.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/source-sans-pro-v13-latin_cyrillic-700.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/source-sans-pro-v13-latin_cyrillic-700.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/source-sans-pro-v13-latin_cyrillic-italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/source-sans-pro-v13-latin_cyrillic-italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/source-sans-pro-v13-latin_cyrillic-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/source-sans-pro-v13-latin_cyrillic-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/ubuntu-v14-latin_cyrillic-700.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/ubuntu-v14-latin_cyrillic-700.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/ubuntu-v14-latin_cyrillic-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/fonts/ubuntu-v14-latin_cyrillic-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/cerulean/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/cerulean/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/cosmo/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/cosmo/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/cyborg/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/cyborg/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/darkly/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/darkly/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/flatly/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/flatly/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/journal/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/journal/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/litera/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/litera/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/lumen/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/lumen/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/lux/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/lux/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/materia/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/materia/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/minty/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/minty/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/pulse/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/pulse/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/sandstone/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/sandstone/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/sberbank/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/sberbank/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/simplex/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/simplex/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/sketchy/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/sketchy/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/slate/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/slate/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/solar/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/solar/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/spacelab/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/spacelab/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/superhero/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/superhero/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/united/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/united/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/yeti/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/assets/styles/yeti/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/main-es2015.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/main-es2015.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/main-es5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/main-es5.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/polyfills-es2015.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/polyfills-es2015.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/polyfills-es5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/polyfills-es5.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/runtime-es2015.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/runtime-es2015.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/runtime-es5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/runtime-es5.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/styles-es2015.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/styles-es2015.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/styles-es5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/styles-es5.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/vendor-es2015.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/vendor-es2015.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/vendor-es5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/purchases/vendor-es5.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/purchase-list-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/purchase-list-ui.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/@purchases/purchase-check/purchase-check.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/@purchases/purchase-check/purchase-check.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/@purchases/purchase-check/purchase-check.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/@purchases/purchase-check/purchase-check.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/@purchases/purchase-edit/purchase-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/@purchases/purchase-edit/purchase-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/@purchases/purchase-edit/purchase-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/@purchases/purchase-edit/purchase-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/@purchases/purchase-edit/purchase-item-edit-dialog/purchase-item-edit-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/@purchases/purchase-edit/purchase-item-edit-dialog/purchase-item-edit-dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/@purchases/purchases-list/purchases-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/@purchases/purchases-list/purchases-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment-constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment-constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
-    </list>
+    <list default="true" id="35a28b5e-020a-4b41-be90-76a1b56cbdef" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -229,11 +106,25 @@
       <updated>1591348410026</updated>
       <workItem from="1591348411403" duration="2000" />
       <workItem from="1607329880500" duration="55000" />
-      <workItem from="1607419674848" duration="20818000" />
+      <workItem from="1607419674848" duration="21054000" />
     </task>
+    <task id="LOCAL-00001" summary="Рабочая версия">
+      <created>1607448204887</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607448204887</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Рабочая версия" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рабочая версия" />
   </component>
 </project>
