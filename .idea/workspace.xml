@@ -25,17 +25,6 @@
     <property name="ts.external.directory.path" value="C:\Users\Mikhail_Vershkov\IdeaProjects\purchase-list\purchase-list-ui\node_modules\typescript\lib" />
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tests (purchases)" type="JavaScriptTestRunnerKarma">
       <config-file value="$PROJECT_DIR$/src/karma.conf.js" />
       <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
@@ -107,6 +96,7 @@
       <workItem from="1591348411403" duration="2000" />
       <workItem from="1607329880500" duration="55000" />
       <workItem from="1607419674848" duration="21054000" />
+      <workItem from="1607668554587" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="Рабочая версия">
       <created>1607448204887</created>
