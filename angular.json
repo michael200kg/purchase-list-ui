@@ -30,27 +30,27 @@
             "es5BrowserSupport": true
           },
           "configurations": {
-            "production": {
+            "aws": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/environment.aws.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": false,
               "outputHashing": "all",
-              "sourceMap": false,
+              "sourceMap": true,
               "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "8mb"
                 }
               ]
             }
@@ -62,8 +62,8 @@
             "browserTarget": "purchases:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "purchases:build:production"
+            "aws": {
+              "browserTarget": "purchases:build:aws"
             }
           }
         },
@@ -117,8 +117,8 @@
             "devServerTarget": "purchases:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "purchases:serve:production"
+            "aws": {
+              "devServerTarget": "purchases:serve:aws"
             }
           }
         },

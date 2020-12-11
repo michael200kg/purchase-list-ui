@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PurchaseModel } from '../model/purchase-model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PurchaseItemEditDialogComponent } from './purchase-item-edit-dialog/purchase-item-edit-dialog.component';
+import { UserFacade } from "../../@app-state-module";
 
 @Component({
   selector: 'app-purchase-edit',
@@ -19,6 +20,7 @@ export class PurchaseEditComponent implements OnInit {
   public buttonLabel: string;
   public mode: string;
   public users: User[];
+  private username = 'michael';
 
   purchaseForm: FormGroup;
 
@@ -27,8 +29,11 @@ export class PurchaseEditComponent implements OnInit {
               private route: ActivatedRoute,
               private router: Router,
               private dialog: MatDialog,
-              private userService: UserService) {
-
+              private userService: UserService,
+              private userFacade: UserFacade) {
+    userFacade.userState$.subscribe(x => {
+      this.username = x.user.username;
+    });
   }
 
   ngOnInit() {
@@ -46,7 +51,7 @@ export class PurchaseEditComponent implements OnInit {
         );
       } else {
         this.purchase = new PurchaseModel(null, new Date(), false, null,
-            null, null, 'MICHAEL', false,
+            null, null, this.username, false,
             null, []);
         this.mode = 'CREATE';
         this.fillFormGroup(this.purchase);
