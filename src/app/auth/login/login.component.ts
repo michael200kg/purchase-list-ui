@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     const userAuth: UserAuth = {username: this.username, password: this.password};
     this.userService.login(userAuth).subscribe(x => {
       if (x.isLoggedIn) {
-        this.router.navigate(['/app/purchases/purchase-list'], {relativeTo: this.route})
+        this.router.navigate(['/app/front/purchases/purchase-list'], {relativeTo: this.route})
             .then(result => {
             });
       }

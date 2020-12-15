@@ -120,7 +120,7 @@ export class PurchaseEditComponent implements OnInit {
   save() {
     this.updateEntity();
     this.resolveService(this.purchase).subscribe(() => {
-      this.router.navigate(['/app/purchases/purchase-list']).then(() => {
+      this.router.navigate(['/app/front/purchases/purchase-list']).then(() => {
       });
     });
   }

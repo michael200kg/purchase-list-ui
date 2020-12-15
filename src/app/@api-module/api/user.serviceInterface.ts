@@ -13,6 +13,7 @@ import { HttpHeaders }                                       from '@angular/comm
 
 import { Observable }                                        from 'rxjs';
 
+import { PasswordUpdateHolder } from '../model/models';
 import { User } from '../model/models';
 
 
@@ -30,6 +31,13 @@ export interface UserServiceInterface {
      * 
      */
     getUsers(extraHttpRequestParams?: any): Observable<Array<User>>;
+
+    /**
+     * Update user password - disable with AD integration
+     * 
+     * @param passwordUpdateHolder 
+     */
+    updatePassword(passwordUpdateHolder: PasswordUpdateHolder, extraHttpRequestParams?: any): Observable<{}>;
 
     /**
      * Edit user

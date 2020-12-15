@@ -1,19 +1,22 @@
 <div class="card">
-    <div class="card-header">{{title}}</div>
     <div class="card-body">
         <form *ngIf="purchaseForm" [formGroup]="purchaseForm">
             <div fxLayout="column" fxLayoutGap="10px">
 
                 <div fxLayout="column">
                     <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
-                        <div fxFlex="30">Список для</div>
+                        <div fxFlex="30"><b>Список для</b></div>
                         <mat-select formControlName="sharedForUsername" name="sharedUserName">
                             <mat-option *ngFor="let user of users" [value]="user.username">
                                 {{user.fio}}
                             </mat-option>
                         </mat-select>
                     </div>
-                    <input class="mt-2 form-control form-control-sm"
+                </div>
+
+                <div fxFlex="90" fxLayout="column">
+                    <div>Наименование списка:</div>
+                    <input class="form-control form-control-sm"
                            formControlName="name"
                            id="name"
                            type="text">
@@ -40,7 +43,7 @@
                     <mat-list-item checkboxPosition="before"
                                    (click)="editItem(item.id)"
                                    *ngFor="let item of purchase.items">
-                        <div style="border-bottom: 1px solid lightgray" mat-line>{{item.itemName}}</div>
+                        <div mat-line>{{item.itemName}}</div>
                         <mat-icon (click)="deleteItem(item.id)" color="warn">clear</mat-icon>
                     </mat-list-item>
                 </mat-list>
@@ -54,7 +57,7 @@
             <button (click)="save()" class="btn btn-success btn-sm">
                 {{buttonLabel}}
             </button>
-            <button (click)="cancel()" class="btn btn-success btn-sm">
+            <button routerLink="'/app/front/purchases/purchase-list'" class="btn btn-success btn-sm">
                 Выход
             </button>
         </div>

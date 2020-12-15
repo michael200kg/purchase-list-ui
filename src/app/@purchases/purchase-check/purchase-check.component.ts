@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Purchase, PurchaseItemService, PurchaseService } from "../../@api-module";
+import { Purchase, PurchaseItem, PurchaseItemService, PurchaseService } from "../../@api-module";
 import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
+import { PurchaseItemEditDialogComponent } from "../purchase-edit/purchase-item-edit-dialog/purchase-item-edit-dialog.component";
 
 @Component({
   selector: 'app-purchase-edit',
@@ -19,7 +21,8 @@ export class PurchaseCheckComponent implements OnInit {
               private purchaseService: PurchaseService,
               private purchaseItemService: PurchaseItemService,
               private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -69,9 +72,23 @@ export class PurchaseCheckComponent implements OnInit {
     });
   }
 
-  cancel() {
-    this.router.navigate(['/app/purchases/purchase-list']).then(() => {
-    });
+  editItem(item: PurchaseItem) {
+    if (item !== null) {
+      const config: MatDialogConfig = {
+        data: {item},
+        maxWidth: '100%',
+        width: '100%'
+      };
+      const editDialogRef = this.dialog.open(PurchaseItemEditDialogComponent, config);
+      editDialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.purchase.items = this.purchase.items.map(x =>
+              x.id === item.id ? editDialogRef.componentInstance.purchaseItem : x);
+          this.purchaseService.editPurchase(this.purchase).subscribe(() => {});
+        }
+      });
+    }
+
   }
 
 }

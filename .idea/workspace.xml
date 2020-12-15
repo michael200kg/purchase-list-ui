@@ -20,6 +20,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/node_modules/protractor" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Users\Mikhail_Vershkov\IdeaProjects\purchase-list\purchase-list-ui\node_modules\typescript\lib" />
@@ -97,6 +98,7 @@
       <workItem from="1607329880500" duration="55000" />
       <workItem from="1607419674848" duration="21054000" />
       <workItem from="1607668554587" duration="28000" />
+      <workItem from="1607871763975" duration="103000" />
     </task>
     <task id="LOCAL-00001" summary="Рабочая версия">
       <created>1607448204887</created>

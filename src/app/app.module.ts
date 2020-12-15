@@ -12,7 +12,8 @@ import { PurchasesModule } from './@purchases/purchases.module';
 import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
 import { JwtInterceptorService } from './auth/jwt-interceptor.service';
 import { LoggerModule } from 'ngx-logger';
-import { AppStateModule } from "./@app-state-module/app-state.module";
+import { AppStateModule } from './@app-state-module/app-state.module';
+import { ErrorInterceptorService } from './service/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,11 @@ import { AppStateModule } from "./@app-state-module/app-state.module";
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
       multi: true
     }
   ],
