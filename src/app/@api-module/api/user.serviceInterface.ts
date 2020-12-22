@@ -27,6 +27,13 @@ export interface UserServiceInterface {
     
 
     /**
+     * Create user
+     * 
+     * @param user User
+     */
+    createUser(user?: User, extraHttpRequestParams?: any): Observable<User>;
+
+    /**
      * Get list of all Users
      * 
      */

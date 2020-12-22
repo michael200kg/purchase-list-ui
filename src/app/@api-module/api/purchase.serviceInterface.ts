@@ -50,13 +50,15 @@ export interface PurchaseServiceInterface {
      * Get Purchase by id
      * 
      * @param purchaseId Id of the Purchase
+     * @param showAll Id of the Purchase
      */
-    getPurchaseById(purchaseId: number, extraHttpRequestParams?: any): Observable<Purchase>;
+    getPurchaseById(purchaseId: number, showAll?: boolean, extraHttpRequestParams?: any): Observable<Purchase>;
 
     /**
      * Get list of all Purchases
      * 
+     * @param showAll Id of the Purchase
      */
-    getPurchases(extraHttpRequestParams?: any): Observable<Array<Purchase>>;
+    getPurchases(showAll?: boolean, extraHttpRequestParams?: any): Observable<Array<Purchase>>;
 
 }

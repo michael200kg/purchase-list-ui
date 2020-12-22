@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Purchase, PurchaseItem, PurchaseItemService, PurchaseService } from "../../@api-module";
-import { FormBuilder } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
-import { PurchaseItemEditDialogComponent } from "../purchase-edit/purchase-item-edit-dialog/purchase-item-edit-dialog.component";
+import { Purchase, PurchaseItem, PurchaseItemService, PurchaseService } from '../../@api-module';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PurchaseItemEditDialogComponent } from '../purchase-edit/purchase-item-edit-dialog/purchase-item-edit-dialog.component';
 
 @Component({
   selector: 'app-purchase-edit',
@@ -14,8 +14,8 @@ export class PurchaseCheckComponent implements OnInit {
 
   public purchase: Purchase;
   public title: string;
-  public buttonLabel: string
-  public mode: string
+  public buttonLabel: string;
+  public mode: string;
 
   constructor(private fb: FormBuilder,
               private purchaseService: PurchaseService,
@@ -29,12 +29,12 @@ export class PurchaseCheckComponent implements OnInit {
     this.route.paramMap.subscribe(x => {
       const id = Number(x.get('purchaseId'));
       if (id > 0) {
-        this.purchaseService.getPurchaseById(id).subscribe(p => {
+        this.purchaseService.getPurchaseById(id, false).subscribe(p => {
               this.purchase = p;
               this.sortItems();
               this.mode = 'UPDATE';
             }
-        )
+        );
       }
 
     });
@@ -45,7 +45,6 @@ export class PurchaseCheckComponent implements OnInit {
 
   sortItems() {
     if (this.purchase.items && this.purchase.items.length > 0) {
-
       const checked = this.purchase.items.filter(x => x.checked);
       const unchecked = this.purchase.items.filter(x => !x.checked);
       this.purchase.items = unchecked.sort((x1, x2) => x1.itemName > x2.itemName ? 1 : -1);
@@ -53,10 +52,10 @@ export class PurchaseCheckComponent implements OnInit {
     }
   }
 
-  toggle(itemId_: number) {
-    this.purchaseItemService.togglePurchaseItem(itemId_).subscribe(() => {
+  toggle(itemId: number) {
+    this.purchaseItemService.togglePurchaseItem(itemId).subscribe(() => {
       this.purchase.items.forEach(x => {
-        if (x.id === itemId_) {
+        if (x.id === itemId) {
           if (x.checked) {
             x.checked = false;
             x.checkedDate = null;
@@ -84,7 +83,8 @@ export class PurchaseCheckComponent implements OnInit {
         if (result) {
           this.purchase.items = this.purchase.items.map(x =>
               x.id === item.id ? editDialogRef.componentInstance.purchaseItem : x);
-          this.purchaseService.editPurchase(this.purchase).subscribe(() => {});
+          this.purchaseService.editPurchase(this.purchase).subscribe(() => {
+          });
         }
       });
     }

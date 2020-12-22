@@ -19,7 +19,7 @@ export class PurchasesListComponent implements OnInit {
               private dialog: MatDialog,
               private router: Router,
               private route: ActivatedRoute) {
-    this.refresh$.pipe(switchMap(x => this.purchaseService.getPurchases()))
+    this.refresh$.pipe(switchMap(x => this.purchaseService.getPurchases(true)))
         .subscribe(x => {
           this.purchases = x.filter(y => y.items.some(z => !z.checked));
           this.purchases.push(
@@ -44,21 +44,21 @@ export class PurchasesListComponent implements OnInit {
 
   }
 
-  editPurchase(id_: number) {
-    this.router.navigate(['/app/front/purchases/purchase-edit', {purchaseId: id_}], {relativeTo: this.route}).then(() => {
+  editPurchase(id: number) {
+    this.router.navigate(['/app/front/purchases/purchase-edit', {purchaseId: id}], {relativeTo: this.route}).then(() => {
       this.refreshTable();
     });
   }
 
-  checkPurchase(id_: number) {
-    this.router.navigate(['/app/front/purchases/purchase-check', {purchaseId: id_}], {relativeTo: this.route}).then(() => {
+  checkPurchase(id: number) {
+    this.router.navigate(['/app/front/purchases/purchase-check', {purchaseId: id}], {relativeTo: this.route}).then(() => {
       this.refreshTable();
     });
   }
 
-  deletePurchase(id_: number) {
+  deletePurchase(id: number) {
     if (confirm('Действительно хотите удалить этот список покупок?')) {
-      this.purchaseService.deletePurchase(id_).subscribe(() => {
+      this.purchaseService.deletePurchase(id).subscribe(() => {
         this.refreshTable();
       });
     }

@@ -173,7 +173,7 @@ export class PurchaseService implements PurchaseServiceInterface {
             responseType = 'text';
         }
 
-        return this.httpClient.delete<any>(`${this.configuration.basePath}/purchase/${encodeURIComponent(String(purchaseId))}`,
+        return this.httpClient.delete<any>(`${this.configuration.basePath}/purchase/getPurchaseById`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
@@ -238,15 +238,26 @@ export class PurchaseService implements PurchaseServiceInterface {
     /**
      * Get Purchase by id
      * @param purchaseId Id of the Purchase
+     * @param showAll Id of the Purchase
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getPurchaseById(purchaseId: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<Purchase>;
-    public getPurchaseById(purchaseId: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<Purchase>>;
-    public getPurchaseById(purchaseId: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<Purchase>>;
-    public getPurchaseById(purchaseId: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+    public getPurchaseById(purchaseId: number, showAll?: boolean, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<Purchase>;
+    public getPurchaseById(purchaseId: number, showAll?: boolean, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<Purchase>>;
+    public getPurchaseById(purchaseId: number, showAll?: boolean, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<Purchase>>;
+    public getPurchaseById(purchaseId: number, showAll?: boolean, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
         if (purchaseId === null || purchaseId === undefined) {
             throw new Error('Required parameter purchaseId was null or undefined when calling getPurchaseById.');
+        }
+
+        let queryParameters = new HttpParams({encoder: this.encoder});
+        if (purchaseId !== undefined && purchaseId !== null) {
+          queryParameters = this.addToHttpParams(queryParameters,
+            <any>purchaseId, 'purchaseId');
+        }
+        if (showAll !== undefined && showAll !== null) {
+          queryParameters = this.addToHttpParams(queryParameters,
+            <any>showAll, 'showAll');
         }
 
         let headers = this.defaultHeaders;
@@ -269,8 +280,9 @@ export class PurchaseService implements PurchaseServiceInterface {
             responseType = 'text';
         }
 
-        return this.httpClient.get<Purchase>(`${this.configuration.basePath}/purchase/${encodeURIComponent(String(purchaseId))}`,
+        return this.httpClient.get<Purchase>(`${this.configuration.basePath}/purchase/getPurchaseById`,
             {
+                params: queryParameters,
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -282,13 +294,20 @@ export class PurchaseService implements PurchaseServiceInterface {
 
     /**
      * Get list of all Purchases
+     * @param showAll Id of the Purchase
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getPurchases(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<Array<Purchase>>;
-    public getPurchases(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<Array<Purchase>>>;
-    public getPurchases(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<Array<Purchase>>>;
-    public getPurchases(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+    public getPurchases(showAll?: boolean, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<Array<Purchase>>;
+    public getPurchases(showAll?: boolean, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpResponse<Array<Purchase>>>;
+    public getPurchases(showAll?: boolean, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json'}): Observable<HttpEvent<Array<Purchase>>>;
+    public getPurchases(showAll?: boolean, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json'}): Observable<any> {
+
+        let queryParameters = new HttpParams({encoder: this.encoder});
+        if (showAll !== undefined && showAll !== null) {
+          queryParameters = this.addToHttpParams(queryParameters,
+            <any>showAll, 'showAll');
+        }
 
         let headers = this.defaultHeaders;
 
@@ -312,6 +331,7 @@ export class PurchaseService implements PurchaseServiceInterface {
 
         return this.httpClient.get<Array<Purchase>>(`${this.configuration.basePath}/purchase`,
             {
+                params: queryParameters,
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,

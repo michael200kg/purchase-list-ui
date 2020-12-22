@@ -9,16 +9,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { PurchaseTemplateItem } from './purchaseTemplateItem';
 
 
-export interface PurchaseItem { 
+export interface PurchaseTemplate { 
     id?: number;
-    purchaseId?: number;
-    checked?: boolean;
-    checkedDate?: Date;
-    itemName?: string;
-    itemDescription?: string;
-    active?: boolean;
+    name?: string;
+    text?: string;
+    username?: string;
+    items?: Array<PurchaseTemplateItem>;
 }
 
 

@@ -11,14 +11,11 @@
  */
 
 
-export interface PurchaseItem { 
+export interface PurchaseTemplateItem { 
     id?: number;
-    purchaseId?: number;
-    checked?: boolean;
-    checkedDate?: Date;
+    purchaseTemplateId?: number;
     itemName?: string;
     itemDescription?: string;
-    active?: boolean;
 }
 
 

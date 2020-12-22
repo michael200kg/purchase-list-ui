@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PurchaseModel } from '../model/purchase-model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PurchaseItemEditDialogComponent } from './purchase-item-edit-dialog/purchase-item-edit-dialog.component';
-import { UserFacade } from "../../@app-state-module";
+import { UserFacade } from '../../@app-state-module';
 
 @Component({
   selector: 'app-purchase-edit',
@@ -43,8 +43,9 @@ export class PurchaseEditComponent implements OnInit {
     this.route.paramMap.subscribe(x => {
       const id = Number(x.get('purchaseId'));
       if (id > 0) {
-        this.purchaseService.getPurchaseById(id).subscribe(p => {
+        this.purchaseService.getPurchaseById(id, true).subscribe(p => {
               this.purchase = p;
+              this.purchase.items = this.sortItems(this.purchase.items);
               this.mode = 'UPDATE';
               this.fillFormGroup(this.purchase);
             }
@@ -63,6 +64,17 @@ export class PurchaseEditComponent implements OnInit {
 
   }
 
+  sortItems(items: PurchaseItem[]): PurchaseItem[] {
+    let sortedItems = [];
+    if (items && items.length > 0) {
+      const activeItems = items.filter(x => x.active);
+      const inactiveItems = items.filter(x => !x.active);
+      sortedItems = activeItems.sort((x1, x2) => x1.itemName > x2.itemName ? 1 : -1);
+      sortedItems.push(...inactiveItems.sort((x1, x2) => x1.itemName > x2.itemName ? 1 : -1));
+    }
+    return sortedItems;
+  }
+
   addItem() {
     const itemName = this.purchaseForm.get('itemName').value;
     if (itemName) {
@@ -76,12 +88,18 @@ export class PurchaseEditComponent implements OnInit {
 
   }
 
-  deleteItem(id_: number) {
-    this.purchase.items = this.purchase.items.filter(x => x.id !== id_);
+  toggleActivity(id: number) {
+    const item: PurchaseItem = this.purchase.items.find(x => x.id === id);
+    item.active = !item.active;
+    this.purchase.items = this.sortItems(this.purchase.items);
   }
 
-  editItem(id_: number) {
-    const item = this.getItemById(id_);
+  deleteItem(id: number) {
+    this.purchase.items = this.purchase.items.filter(x => x.id !== id);
+  }
+
+  editItem(id: number) {
+    const item = this.getItemById(id);
     if (item !== null) {
       const config: MatDialogConfig = {
         data: {item},
@@ -92,18 +110,18 @@ export class PurchaseEditComponent implements OnInit {
       editDialogRef.afterClosed().subscribe(result => {
         if (result) {
           this.purchase.items = this.purchase.items.map(x =>
-              x.id === id_ ? editDialogRef.componentInstance.purchaseItem : x);
+              x.id === id ? editDialogRef.componentInstance.purchaseItem : x);
         }
       });
     }
 
   }
 
-  fillFormGroup(p_: Purchase) {
+  fillFormGroup(p: Purchase) {
     this.purchaseForm = this.fb.group({
-      name: [p_.name, [Validators.required]],
+      name: [p.name, [Validators.required]],
       itemName: [null],
-      sharedForUsername: [p_.sharedForUsername]
+      sharedForUsername: [p.sharedForUsername]
     });
   }
 
@@ -112,9 +130,9 @@ export class PurchaseEditComponent implements OnInit {
     this.purchase.sharedForUsername = this.purchaseForm.get('sharedForUsername').value;
   }
 
-  resolveService(purchase_: Purchase): Observable<any> {
-    return this.mode === 'UPDATE' ? this.purchaseService.editPurchase(purchase_) :
-        this.purchaseService.createPurchase(purchase_);
+  resolveService(purchase: Purchase): Observable<any> {
+    return this.mode === 'UPDATE' ? this.purchaseService.editPurchase(purchase) :
+        this.purchaseService.createPurchase(purchase);
   }
 
   save() {
@@ -125,14 +143,9 @@ export class PurchaseEditComponent implements OnInit {
     });
   }
 
-  cancel() {
-    this.router.navigate(['/app/purchases/purchase-list']).then(() => {
-    });
-  }
-
-  getItemById(id_: number): PurchaseItem {
+  getItemById(id: number): PurchaseItem {
     return this.purchase.items && this.purchase.items.length > 0 ?
-        this.purchase.items.find(x => x.id === id_) : null;
+        this.purchase.items.find(x => x.id === id) : null;
   }
 
 }

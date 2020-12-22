@@ -40,11 +40,13 @@
                 </div>
 
                 <mat-list>
-                    <mat-list-item checkboxPosition="before"
-                                   (click)="editItem(item.id)"
-                                   *ngFor="let item of purchase.items">
-                        <div mat-line>{{item.itemName}}</div>
-                        <mat-icon (click)="deleteItem(item.id)" color="warn">clear</mat-icon>
+                    <mat-list-item *ngFor="let item of purchase.items">
+                        <div fxLayout="row" style="width:100%" fxLayoutAlign="start center">
+                            <mat-icon fxFlex="10" (click)="toggleActivity(item.id)"
+                                      color="primary">{{item.active ? 'block' : 'task_alt' }}</mat-icon>
+                            <div [class]="item.active ? '' : 'non-active-item'" fxFlex="80" (click)="editItem(item.id)">{{item.itemName}}</div>
+                            <mat-icon fxFlex="10" (click)="deleteItem(item.id)" color="warn">clear</mat-icon>
+                        </div>
                     </mat-list-item>
                 </mat-list>
 
